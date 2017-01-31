@@ -6,6 +6,11 @@ $('#btn-map').click(function(){
 	window.location.assign('comgooglemaps://?saddr=Current%20Location&daddr=40.5105277,0.42574020000006385')
 });
 
+$('.to_top').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+});
+
 
 var links = document.getElementsByTagName("a");
 for(var i=0;i<links.length;i++)
@@ -24,18 +29,70 @@ $('.tarjetas').click(function(e){
 
 var $info = $('#nav_info_sec');
 
+if (window.location.pathname === '/donde-estamos/') {
+	if (window.screen.width<330){
+		$(window).scroll(function(){
+			if (window.scrollY > 250) {
+				$info.html('<p>Donde estamos</p>');
+				$('.to_top').fadeIn();
+			}else {
+				$info.html('');
+				$('.to_top').fadeOut();
+			}
+		})
+	}
+	if (window.screen.width>330){
+		$(window).scroll(function(){
+			if (window.scrollY > 284) {
+				$info.html('<p>Donde estamos</p>');
+				$('.to_top').fadeIn();
+			}else {
+				$info.html('');
+				$('.to_top').fadeOut();
+			}
+		})
+	}
+}
+
+if (window.location.pathname === '/quienes-somos/') {
+	if (window.screen.width<330){
+		$(window).scroll(function(){
+			if (window.scrollY > 250) {
+				$info.html('<p>Quienes somos</p>');
+				$('.to_top').fadeIn();
+			}else {
+				$info.html('');
+				$('.to_top').fadeOut();
+			}
+		})
+	}
+	if (window.screen.width>330){
+		$(window).scroll(function(){
+			if (window.scrollY > 284) {
+				$info.html('<p>Quienes somos</p>');
+				$('.to_top').fadeIn();
+			}else {
+				$info.html('');
+				$('.to_top').fadeOut();
+			}
+		})
+	}
+}
+
 if (window.location.pathname === '/nuestra-carta/') {
 
 	if (window.screen.width<=330){
 		$(window).scroll(function(){
 			if (window.scrollY<250) {
-				$info.html('')
+				$info.html('');
+				$('.to_top').fadeOut();
 			}
 			if (window.scrollY>310) {
 				$info.html('<p>Ensaladas</p>')
 			}
 			if (window.scrollY>1043) {
-				$info.html('<p>Torradas</p>')
+				$('.to_top').fadeIn();
+				$info.html('<p>Torradas</p>');
 			}
 			if (window.scrollY>2488) {
 				$info.html('<p>Bocadillos</p>')
@@ -54,13 +111,15 @@ if (window.location.pathname === '/nuestra-carta/') {
 	if (window.screen.width>=370) {
 		$(window).scroll(function(){
 			if (window.scrollY<250) {
-				$info.html('')
+				$info.html('');
+				$('.to_top').fadeOut();
 			}
 			if (window.scrollY>325) {
 				$info.html('<p>Ensaladas</p>')
 			}
 			if (window.scrollY>989) {
-				$info.html('<p>Torradas</p>')
+				$('.to_top').fadeIn();
+				$info.html('<p>Torradas</p>');
 			}
 			if (window.scrollY>2264) {
 				$info.html('<p>Bocadillos</p>')
@@ -78,43 +137,26 @@ if (window.location.pathname === '/nuestra-carta/') {
 	}
 }
 
-if (window.location.pathname === '/los-menus/') {
+if (window.location.pathname === '/carta-de-tapas/') {
 	if (window.screen.width<330){
 		$(window).scroll(function(){
 			if (window.scrollY > 280) {
-				$info.html('<p>MENÚS</p>')
+				$info.html('<p>Las Tapas</p>');
+				$('.to_top').fadeIn();
 			}else {
-				$info.html('')
-			}
-		})
-	}
-	if (window.screen.width>331){
-		$(window).scroll(function(){
-			if (window.scrollY > 328) {
-				$info.html('<p>MENÚS</p>')
-			}else {
-				$info.html('')
-			}
-		})
-	}
-}
-
-if (window.location.pathname === '/las-tapas/') {
-	if (window.screen.width<330){
-		$(window).scroll(function(){
-			if (window.scrollY > 280) {
-				$info.html('<p>Las Tapas</p>')
-			}else {
-				$info.html('')
+				$info.html('');
+				$('.to_top').fadeOut();
 			}
 		})
 	}
 	if (window.screen.width>330){
 		$(window).scroll(function(){
 			if (window.scrollY > 328) {
-				$info.html('<p>Las Tapas</p>')
+				$info.html('<p>Las Tapas</p>');
+				$('.to_top').fadeIn();
 			}else {
-				$info.html('')
+				$info.html('');
+				$('.to_top').fadeOut();
 			}
 		})
 	}

@@ -48,7 +48,7 @@
 			<span class="icon-instagram"></span>
 			<span class="icon-twitter"></span>
 		</div>
-		<p>Web creada por ©<a href="http://ivanbardon.github.io/portfolio/">Robots</a> 2016</p>
+		<p>Web creada por ©<a href="http://ivanbardon.github.io/portfolio/">La Nevera</a> 2016</p>
 		
 				
 		<!-- Share Sheets -->
@@ -64,7 +64,7 @@
 							</a></li>
 						</div>
 						<div class="itemcontainer">
-							<li><a href="#">
+							<li><a href="//www.instagram.com/lataperiadelaermita">
 								<img class="appicon" src="/wp-content/uploads/2017/01/Instagram.png" alt="">
 								Instagram
 							</a></li>
