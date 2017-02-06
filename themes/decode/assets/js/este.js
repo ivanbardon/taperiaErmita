@@ -1,9 +1,16 @@
-console.log('funciono');
+
 
 $ = jQuery;
 
+var $info = $('#nav_info_sec');
+var titulos = $('.titulo');
+
+var href = window.location.href;
+href = href.split('/');
+href = href[href.length -2];
+
 $('#btn-map').click(function(){
-	window.location.assign('comgooglemaps://?saddr=Current%20Location&daddr=40.5105277,0.42574020000006385')
+	window.location.assign('//maps.google.com/maps?q=loc:40.510527,0.42574020000006385')
 });
 
 $('.to_top').click(function(){
@@ -27,13 +34,12 @@ $('.tarjetas').click(function(e){
   $(this).find('div.oculto').fadeToggle()
 })
 
-var $info = $('#nav_info_sec');
 
-if (window.location.pathname === '/donde-estamos/') {
+if (href === 'donde-estamos') {
 	if (window.screen.width<330){
 		$(window).scroll(function(){
 			if (window.scrollY > 250) {
-				$info.html('<p>Donde estamos</p>');
+				$info.html("<p>La Tapería de l'Ermita</p>");
 				$('.to_top').fadeIn();
 			}else {
 				$info.html('');
@@ -44,7 +50,7 @@ if (window.location.pathname === '/donde-estamos/') {
 	if (window.screen.width>330){
 		$(window).scroll(function(){
 			if (window.scrollY > 284) {
-				$info.html('<p>Donde estamos</p>');
+				$info.html("<p>La Tapería de l'Ermita</p>");
 				$('.to_top').fadeIn();
 			}else {
 				$info.html('');
@@ -54,11 +60,11 @@ if (window.location.pathname === '/donde-estamos/') {
 	}
 }
 
-if (window.location.pathname === '/quienes-somos/') {
+if (href === 'quienes-somos') {
 	if (window.screen.width<330){
 		$(window).scroll(function(){
 			if (window.scrollY > 250) {
-				$info.html('<p>Quienes somos</p>');
+				$info.html("<p>La Tapería de l'Ermita</p>");
 				$('.to_top').fadeIn();
 			}else {
 				$info.html('');
@@ -69,7 +75,7 @@ if (window.location.pathname === '/quienes-somos/') {
 	if (window.screen.width>330){
 		$(window).scroll(function(){
 			if (window.scrollY > 284) {
-				$info.html('<p>Quienes somos</p>');
+				$info.html("<p>La Tapería de l'Ermita</p>");
 				$('.to_top').fadeIn();
 			}else {
 				$info.html('');
@@ -79,7 +85,7 @@ if (window.location.pathname === '/quienes-somos/') {
 	}
 }
 
-if (window.location.pathname === '/nuestra-carta/') {
+if (href === 'nuestra-carta') {
 
 	if (window.screen.width<=330){
 		$(window).scroll(function(){
@@ -88,23 +94,23 @@ if (window.location.pathname === '/nuestra-carta/') {
 				$('.to_top').fadeOut();
 			}
 			if (window.scrollY>310) {
-				$info.html('<p>Ensaladas</p>')
+				$info.html('<p>'+ titulos[0].textContent +'</p>')
 			}
 			if (window.scrollY>1043) {
 				$('.to_top').fadeIn();
-				$info.html('<p>Torradas</p>');
+				$info.html('<p>'+ titulos[1].textContent +'</p>');
 			}
 			if (window.scrollY>2488) {
-				$info.html('<p>Bocadillos</p>')
+				$info.html('<p>'+ titulos[2].textContent +'</p>')
 			}
 			if (window.scrollY>5111) {
-				$info.html('<p>Carnes</p>')
+				$info.html('<p>'+ titulos[3].textContent +'</p>')
 			}
 			if (window.scrollY>7191) {
-				$info.html('<p>Pescados</p>')
+				$info.html('<p>'+ titulos[4].textContent +'</p>')
 			}
 			if (window.scrollY>8049) {
-				$info.html('<p>Arroces</p>')
+				$info.html('<p>'+ titulos[5].textContent +'</p>')
 			}
 		})
 	}
@@ -115,33 +121,33 @@ if (window.location.pathname === '/nuestra-carta/') {
 				$('.to_top').fadeOut();
 			}
 			if (window.scrollY>325) {
-				$info.html('<p>Ensaladas</p>')
+				$info.html('<p>'+ titulos[0].textContent +'</p>')
 			}
 			if (window.scrollY>989) {
 				$('.to_top').fadeIn();
-				$info.html('<p>Torradas</p>');
+				$info.html('<p>'+ titulos[1].textContent +'</p>');
 			}
 			if (window.scrollY>2264) {
-				$info.html('<p>Bocadillos</p>')
+				$info.html('<p>'+ titulos[2].textContent +'</p>')
 			}
 			if (window.scrollY>4684) {
-				$info.html('<p>Carnes</p>')
+				$info.html('<p>'+ titulos[3].textContent +'</p>')
 			}
 			if (window.scrollY>6708) {
-				$info.html('<p>Pescados</p>')
+				$info.html('<p>'+ titulos[4].textContent +'</p>')
 			}
 			if (window.scrollY>7564) {
-				$info.html('<p>Arroces</p>')
+				$info.html('<p>'+ titulos[5].textContent +'</p>')
 			}
 		})
 	}
 }
 
-if (window.location.pathname === '/carta-de-tapas/') {
+if (href === 'tapas') {
 	if (window.screen.width<330){
 		$(window).scroll(function(){
 			if (window.scrollY > 280) {
-				$info.html('<p>Las Tapas</p>');
+				$info.html('<p>'+ titulos[0].textContent +'</p>');
 				$('.to_top').fadeIn();
 			}else {
 				$info.html('');
@@ -152,7 +158,7 @@ if (window.location.pathname === '/carta-de-tapas/') {
 	if (window.screen.width>330){
 		$(window).scroll(function(){
 			if (window.scrollY > 328) {
-				$info.html('<p>Las Tapas</p>');
+				$info.html('<p>'+ titulos[0].textContent +'</p>');
 				$('.to_top').fadeIn();
 			}else {
 				$info.html('');
@@ -162,11 +168,11 @@ if (window.location.pathname === '/carta-de-tapas/') {
 	}
 }
 
-if (window.location.pathname === '/reservas/') {
+if (href === 'reservas') {
 	if (window.screen.width<330){
 		$(window).scroll(function(){
 			if (window.scrollY > 250) {
-				$info.html('<p>Reservas</p>')
+				$info.html('<p>'+ titulos[0].textContent +'</p>')
 			}else {
 				$info.html('')
 			}
@@ -175,7 +181,7 @@ if (window.location.pathname === '/reservas/') {
 	if (window.screen.width>330){
 		$(window).scroll(function(){
 			if (window.scrollY > 284) {
-				$info.html('<p>Reservas</p>')
+				$info.html('<p>'+ titulos[0].textContent +'</p>')
 			}else {
 				$info.html('')
 			}
@@ -186,7 +192,7 @@ if (window.location.pathname === '/reservas/') {
 
 var path = window.location.pathname;
 
-if (path.length>2) {
+if (path.length>4) {
 	if (window.screen.width<330){
 		window.scrollTo(0, 243)
 	}

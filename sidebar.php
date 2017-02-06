@@ -46,6 +46,7 @@
 
 		<?php endif; // end sidebar widget area ?>
 		<?php tha_sidebar_bottom(); ?>
+		<?php echo do_shortcode('[gtranslate]'); ?>
 		
 	</div><!-- .widget-area -->
 	<?php tha_sidebars_after(); ?>
